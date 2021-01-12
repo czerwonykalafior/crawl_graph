@@ -1,0 +1,92 @@
+[
+  {"id": 1, "source": "f1", "target":  "f2", "url": "www.main.com"},
+  {"id": 2, "source": "f2", "target":  "f3", "prev": 1},
+  {"id": 3, "source": "f2", "target":  "f3", "prev": 1},
+  {"id": 6, "source": "f3", "target":  "f4", "prev": 2, "url": "www.cat1.com"},
+  {"id": 7, "source": "f3", "target":  "f4", "prev": 3, "url": "www.cat2.com"},
+  {"id": 10, "source": "f4", "target":  "f5", "prev": 6},
+  {"id": 11, "source": "f4", "target":  "f5",  "prev": 6},
+  {"id": 12, "source": "f4", "target":  "f5",  "prev": 7},
+  {"id": 13, "source": "f4", "target":  "f5",  "prev": 7},
+  {"id": 14, "source": "f5", "target":  "f6",  "prev": 10, "url": "www.product1.com"},
+  {"id": 15, "source": "f5", "target":  "f6",  "prev": 11, "url": "www.product2.com"},
+  {"id": 16, "source": "f5", "target":  "f6",  "prev": 12, "url": "www.product3.com"},
+  {"id": 17, "source": "f5", "target":  "f6",  "prev": 13, "url": "www.product4.com"},
+  {"id": 18, "source": "f5", "target":  "f6",  "prev": 14},
+  {"id": 19, "source": "f5", "target":  "f6",  "prev": 15},
+  {"id": 20, "source": "f5", "target":  "f6",  "prev": 16},
+  {"id": 21, "source": "f5", "target":  "f6",  "prev": 17},
+  {
+    "www.main.com": {
+      "www.cat1.com": {
+        "www.product1.com": {},
+        "www.product2.com": {}
+      },
+      "www.cat2.com": {
+        "www.product3.com": {},
+        "www.product4.com": {}
+      }
+    }
+  },
+  [
+    {
+      "id": 1,
+      "url": "www.main.com",
+      "edges": [
+        {"id": 1, "next_url": "www.cat1.com", "node_id": 2},
+        {"id": 2, "next_url": "www.cat2.com", "node_id": 3}
+      ]
+    },
+    {
+      "id": 2,
+      "url": "www.cat1.com",
+      "edges": [
+        {"id": 3, "next_url": "www.product1.com", "node_id": 4},
+        {"id": 4, "next_url": "www.product2.com", "node_id": 5}
+      ]
+    },
+    {
+      "id": 3, 
+      "url": "www.cat2.com",
+      "edges": [
+        {"id": 5, "next_url": "www.product3.com", "node_id": 6},
+        {"id": 6, "next_url": "www.product4.com", "node_id": 7}
+      ]
+    },
+    {
+      "id": 4, 
+      "url": "www.product1.com",
+      "edges": []
+    },
+    {
+      "id": 5, 
+      "url": "www.product2.com",
+      "edges": []
+    },
+    {
+      "id": 6, 
+      "url": "www.product3.com",
+      "edges": []
+    },
+    {
+      "id": 7, 
+      "url": "www.product4.com",
+      "edges": []
+    }
+  ],
+  
+  {
+    "www.main.com": ["www.cat1.com", "www.cat2.com"],
+    
+  {
+      "www.cat1.com": {
+        "www.product1.com": {},
+        "www.product2.com": {}
+      },
+      "www.cat2.com": {
+        "www.product3.com": {},
+        "www.product4.com": {}
+      }
+    }
+  }
+]
